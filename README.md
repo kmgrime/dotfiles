@@ -1,6 +1,18 @@
+![GitHub all releases](https://img.shields.io/github/downloads/kmgrime/configFiles/total?color=Blue&logo=Github)
+![GitHub repo size](https://img.shields.io/github/repo-size/kmgrime/configFiles?color=Green&logo=Vim)
+
 # configFiles
-My collection of config files
+
+A collection of my personal config files
 
 ## Font
 
-Install fonts
+```
+https://github.com/ryanoasis/nerd-fonts
+```
+
+## Screenshot
+
+<p align="center">
+  <img src="images/vim.jpg" />
+</p>
