@@ -7,4 +7,12 @@ A collection of my personal config files
 
 ## Font
 
-Install fonts
+```
+https://github.com/ryanoasis/nerd-fonts
+```
+
+## Screenshot
+
+<p align="center">
+  <img src="images/vim.jpg" />
+</p>
