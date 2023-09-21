@@ -11,6 +11,9 @@ A collection of my personal dotfiles
 https://github.com/ryanoasis/nerd-fonts
 ```
 
+# iTerm2 theme
+https://github.com/herrbischoff/iterm2-gruvbox
+
 ## Screenshot
 
 <p align="center">
