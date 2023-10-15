@@ -1,2 +1,2 @@
 require("kmgrime.remap")
-print("hello from kmgrime")
+require("kmgrime.set")
