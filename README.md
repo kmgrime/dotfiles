@@ -4,16 +4,11 @@
 
 personal dotfiles, feel free to copy and reuse configs.
 
-## Font
-```
-https://github.com/ryanoasis/nerd-fonts
-```
+# contents
+- neovim config
+- yabai config
+- skhd config
 
-# iTerm2 theme
-https://github.com/herrbischoff/iterm2-gruvbox
-
-## Screenshot
-
-<p align="center">
-  <img src="images/vim.jpg" />
-</p>
+# me
+- [Twitter](https://www.twitter.com/kmgrime
+- [GitHub](https://www.github.com/kmgrime
