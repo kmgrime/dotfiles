@@ -10,5 +10,5 @@ personal dotfiles, feel free to copy and reuse configs.
 - skhd config
 
 # me
-- [Twitter](https://www.twitter.com/kmgrime
-- [GitHub](https://www.github.com/kmgrime
+- [Twitter](https://www.twitter.com/kmgrime)
+- [GitHub](https://www.github.com/kmgrime)

@@ -13,3 +13,5 @@ git
 htop
 tree
 lazygit
+yabai
+skhd
