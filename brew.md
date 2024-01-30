@@ -1,17 +1,23 @@
-#brew installs
+# brew installs macos/linux
 
+```
 fzf
 font-hack-nerd-font
+font-ubuntu
 lsd
-iterm2
 alacritty
+readline
+git
+btop
+tree
+neofetch
+lazygit
+```
+
+## for zsh shell
+
+```
 zsh-autocomplete
 zsh-autosuggestions
 zsh-syntax-highlighting
-readline
-git
-htop
-tree
-lazygit
-yabai
-skhd
+```
