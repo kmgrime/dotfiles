@@ -6,8 +6,7 @@ personal dotfiles, feel free to copy and reuse configs.
 
 # contents
 - neovim config
-- yabai config
-- skhd config
+- list of brew packs
 
 # me
 - [Twitter](https://www.twitter.com/kmgrime)
