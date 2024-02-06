@@ -14,8 +14,10 @@ neofetch
 lazygit
 ```
 
-## for zsh shell
-
+## MacOS specific
+```
+amethyst
+```
 ```
 zsh-autocomplete
 zsh-autosuggestions
