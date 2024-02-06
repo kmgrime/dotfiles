@@ -1,9 +1,11 @@
 " Properties
 syntax enable
 filetype indent on
+
 " colorscheme desert
 
 " Sets
+set background=dark
 set tabstop=4
 set number
 set hlsearch
@@ -19,13 +21,12 @@ set clipboard=unnamed
 
 " Netrw
 let g:netrw_liststyle = 3
-let g:netrw_browse_split = 4
+let g:netrw_browse_split = 3
 let g:netrw_altv = 1
 let g:netrw_winsize = 25
 
 "  Mappings
 let mapleader=' '
-nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :terminal<CR>
 nnoremap <C-e> :Ex<CR>
 
@@ -33,10 +34,10 @@ nnoremap <C-e> :Ex<CR>
 call plug#begin('~/.vim/plugged')
 
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
-Plug 'preservim/nerdtree'
 Plug 'itchyny/vim-gitbranch'
 Plug 'tpope/vim-fugitive'
+Plug 'rose-pine/vim'
 
 cal plug#end()
