@@ -1,26 +1,43 @@
-set number
+" Properties
 syntax enable
 filetype indent on
+
+" colorscheme desert
+
+" Sets
+set background=dark
 set tabstop=4
-set softtabstop=4
+set number
+set hlsearch
+set incsearch
 set autoindent
 set encoding=utf-8
- 
-nnoremap <C-n> :NERDTree<CR>
+set fileencoding=utf-8
+set fileencodings=utf-8
+set guicursor=n-v-c:block-Cursor
+set guicursor+=i:ver100-iCursor
+set mouse=a
+set clipboard=unnamed
+
+" Netrw
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 3
+let g:netrw_altv = 1
+let g:netrw_winsize = 25
+
+"  Mappings
+let mapleader=' '
 nnoremap <C-t> :terminal<CR>
- 
-call plug#begin()
-Plug 'kristijanhusak/defx-git'
-Plug 'kristijanhusak/defx-icons'
-Plug 'Raimondi/delimitMate'
+nnoremap <C-e> :Ex<CR>
+
+" Plugins
+call plug#begin('~/.vim/plugged')
+
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
-Plug 'hashivim/vim-terraform'
-Plug 'hashicorp/terraform-ls'
-Plug 'vim-scripts/indentpython.vim'
-Plug 'vim-syntastic/syntastic'
-Plug 'nvie/vim-flake8'
-Plug 'preservim/nerdtree'
-Plug 'davidhalter/jedi-vim'
-call plug#end()
+Plug 'itchyny/vim-gitbranch'
+Plug 'tpope/vim-fugitive'
+Plug 'rose-pine/vim'
+
+cal plug#end()
