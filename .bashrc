@@ -5,11 +5,11 @@ case $- in
 esac
 
 # Path to your oh-my-bash installation.
-export OSH='/home/USER/.oh-my-bash'
+export OSH='/home/u58306/.oh-my-bash'
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-bash is loaded.
-OSH_THEME="powerline-icon"
+# OSH_THEME=""
 
 # Uncomment the following line to use case-sensitive completion.
 # OMB_CASE_SENSITIVE="true"
@@ -22,7 +22,7 @@ OSH_THEME="powerline-icon"
 # DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_OSH_DAYS=13
+export UPDATE_OSH_DAYS=1
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -140,22 +140,29 @@ source "$OSH"/oh-my-bash.sh
 # alias bashconfig="mate ~/.bashrc"
 # alias ohmybash="mate ~/.oh-my-bash"
 #
-# My aliases 03092023
+# My aliases
 alias l="lsd -lha --group-dirs first"
-alias wttr="curl wttr.in/"
+alias wttr="curl wttr.in/trestakkvegen"
 alias v="nvim"
 alias lg="lazygit"
 alias nb="newsboat"
+alias vpn="./Developer/scripts/vpnSK.sh"
 alias update="./Developer/scripts/update.sh"
 alias k="kubectl"
 
 # Default app browser
-export BROWSER=/usr/bin/google-chrome
+export BROWSER=/usr/bin/firefox
 
 #Path exports
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/usr/sbin
 export PATH=$PATH:/usr/bin
-export TZ=STOCKHOLM
 
+#Time Zone
+source .profile
+
+#Prompt
+source ~/.config/.prompt.sh
+
+#Brew
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
