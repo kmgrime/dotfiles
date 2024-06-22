@@ -59,6 +59,7 @@ filetype indent on
 " set background=dark
 set tabstop=4
 set number
+set showmatch
 set hlsearch
 set incsearch
 set autoindent
