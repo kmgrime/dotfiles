@@ -1,3 +1,11 @@
+" plugins
+call plug#begin()
+
+" List your plugins here
+Plug 'dracula/vim', { 'as': 'dracula' }
+
+call plug#end()
+
 "" statusline
 set laststatus=2
 set statusline=                          " left align
@@ -51,15 +59,9 @@ augroup GetGitBranch
   autocmd VimEnter,WinEnter,BufEnter * call StatuslineGitBranch()
 augroup END
 
-syntax enable
-filetype indent on
 
-
-" set termguicolors
-" set background=dark
-set tabstop=4
+set tabstop=2
 set number
-set showmatch
 set hlsearch
 set incsearch
 set autoindent
@@ -71,6 +73,13 @@ set guicursor+=i:ver100-iCursor
 set mouse=a
 set clipboard=unnamed
 
+set termguicolors
+syntax on
+colorscheme dracula
+hi Normal guibg=NONE ctermbg=NONE
+filetype plugin indent on
+set paste
+
 let g:netrw_liststyle = 3
 let g:netrw_browse_split = 3
 let g:netrw_altv = 1
@@ -79,3 +88,9 @@ let g:netrw_winsize = 25
 let mapleader=' '
 nnoremap <C-t> :terminal<CR>
 nnoremap <C-e> :Ex<CR>
+" Go to tab by number
+noremap <leader>1 1gt
+noremap <leader>2 2gt
+noremap <leader>3 3gt
+noremap <leader>4 4gt
+noremap <leader>5 5gt
