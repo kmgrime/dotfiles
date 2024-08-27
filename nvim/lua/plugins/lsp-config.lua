@@ -35,17 +35,7 @@ return {
 		capabilities = capabilities,
 		settings = {
 			yaml = {
-				schemas = {
-					["http://json.schemastore.org/github-workflow"] = ".github/workflows/*.{yml,yaml}",
-					["http://json.schemastore.org/github-action"] = ".github/action.{yml,yaml}",
-					["http://json.schemastore.org/ansible-playbook"] = "playbook.{yml,yaml}",
-					["http://json.schemastore.org/chart"] = "Chart.{yml,yaml}",
-					["http://json.schemastore.org/kustomization"] = "kustomization.{yml,yaml}",
-					["http://json.schemastore.org/helmfile"] = "helmfile.{yml,yaml}",
-					["http://json.schemastore.org/kubernetes"] = "*.{yml,yaml}",
-					["https://raw.githubusercontent.com/fluxcd/flux2/main/manifests/crds/kustomize.toolkit.fluxcd.io_kustomizations.yaml"] = "kustomization.yaml",
-					["https://json.schemastore.org/gitlab-ci.json"] = ".gitlab-ci.{yml,yaml}",
-				},
+				schemas = {},
 				validate = true,
 				hover = true,
 				completion = true,
