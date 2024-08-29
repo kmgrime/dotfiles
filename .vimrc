@@ -7,7 +7,8 @@ set autoindent
 set encoding=utf-8
 set termguicolors
 set mouse=a
- 
+set rtp+=/opt/homebrew/opt/fzf
+
 nnoremap <C-e> :NERDTree<CR>
 nnoremap <C-t> :terminal<CR>
 
@@ -19,7 +20,8 @@ nmap <silent> <c-l> :wincmd l<CR>
 call plug#begin()
 Plug 'vim-airline/vim-airline'
 Plug 'preservim/nerdtree'
-Plug 'dracula/vim', { 'as': 'dracula' }
 call plug#end()
 
-colorscheme dracula
+colorscheme desert
+hi Normal guibg=NONE ctermbg=NONE
+hi NonText guibg=NONE ctermbg=NONE
