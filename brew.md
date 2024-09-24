@@ -2,7 +2,6 @@
 
 ```
 fzf
-font-hack-nerd-font
 font-ubuntu
 lsd
 alacritty
@@ -17,6 +16,7 @@ lazygit
 ## MacOS specific
 ```
 amethyst
+wget
 ```
 ```
 zsh-autocomplete
