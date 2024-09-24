@@ -146,7 +146,6 @@ alias wttr="curl wttr.in/trestakkvegen"
 alias v="nvim"
 alias lg="lazygit"
 alias nb="newsboat"
-alias vpn="./Developer/scripts/vpnSK.sh"
 alias update="./Developer/scripts/update.sh"
 alias k="kubectl"
 
