@@ -22,7 +22,7 @@ export OSH='/home/u58306/.oh-my-bash'
 # DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
-export UPDATE_OSH_DAYS=1
+export UPDATE_OSH_DAYS=7
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
