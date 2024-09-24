@@ -142,7 +142,7 @@ source "$OSH"/oh-my-bash.sh
 #
 # My aliases
 alias l="lsd -lha --group-dirs first"
-alias wttr="curl wttr.in/trestakkvegen"
+alias wttr="curl wttr.in"
 alias v="nvim"
 alias lg="lazygit"
 alias nb="newsboat"
