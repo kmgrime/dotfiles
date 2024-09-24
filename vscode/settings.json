@@ -57,5 +57,6 @@
     "scm.inputFontFamily": "UbuntuMono Nerd Font",
     "chat.editor.fontFamily": "UbuntuMono Nerd Font",
     "editor.fontSize": 14,
-    "workbench.activityBar.location": "hidden"
+    "workbench.activityBar.location": "hidden",
+    "workbench.tree.renderIndentGuides": "none"
 }
