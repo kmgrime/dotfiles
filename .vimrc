@@ -51,36 +51,68 @@ augroup GetGitBranch
   autocmd VimEnter,WinEnter,BufEnter * call StatuslineGitBranch()
 augroup END
 
-
+" Options
+set encoding=UTF-8
+set fileencoding=utf-8
 set tabstop=2
+set spelllang=en_us,no_nb
+set nobackup
+set nowritebackup
+set linebreak
+set scrolloff=8
+set noswapfile
+set smartindent
+set autoindent
 set number
 set hlsearch
 set incsearch
 set autoindent
 set encoding=utf-8
-set fileencoding=utf-8
-set fileencodings=utf-8
 set guicursor=n-v-c:block-Cursor
 set guicursor+=i:ver100-iCursor
 set mouse=a
 set clipboard=unnamed
-
 set termguicolors
+set paste
+
+" Use a line cursor within insert mode and a block cursor everywhere else.
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
+
 syntax on
-colorscheme desert
+colorscheme torte
 hi Normal guibg=NONE ctermbg=NONE
 hi NonText guibg=NONE ctermbg=NONE
 filetype plugin indent on
-set paste
 
+let g:netrw_banner = 0
 let g:netrw_liststyle = 3
-let g:netrw_browse_split = 3
+let g:netrw_browse_split = 4
 let g:netrw_altv = 1
 let g:netrw_winsize = 25
 
+" Set leader key
 let mapleader=' '
-nnoremap <C-t> :terminal<CR>
-nnoremap <C-e> :Ex<CR>
+let maplocalleader=' '
+
+" Disable the spacebar key's default behavior in Normal and Visual modes
+nnoremap <Space> <Nop>
+vnoremap <Space> <Nop>
+
+"Key maps
+noremap <leader>t :terminal<CR>
+noremap <silent> <leader>e :Lex<CR>
+
+" Navigate between splits
+nnoremap <C-k> :wincmd k<CR>
+nnoremap <C-j> :wincmd j<CR>
+nnoremap <C-h> :wincmd h<CR>
+nnoremap <C-l> :wincmd l<CR>
+
+" Navigate buffers
+nnoremap <Tab> :bnext<CR>
+nnoremap <S-Tab> :bprevious<CR>
+nnoremap <leader>sb :buffers<CR>:buffer<Space>
 
 " Go to tab by number
 noremap <leader>1 1gt
