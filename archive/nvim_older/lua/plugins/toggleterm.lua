@@ -10,8 +10,8 @@ return {
           local count = vim.v.count1
           require("toggleterm").toggle(count, 0, LazyVim.root.get(), "float")
         end,
+        desc = "ToggleTerm (float root_dir)",
       },
-      desc = "ToggleTerm (float root_dir)",
       {
         "<leader>Th",
         function()
