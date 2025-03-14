@@ -11,6 +11,8 @@ btop
 tree
 neofetch
 lazygit
+helm
+flux
 ```
 
 ## MacOS specific

@@ -8,6 +8,3 @@ personal dotfiles, feel free to copy and reuse configs.
 - neovim config
 - list of brew packs
 
-# me
-- [Twitter](https://www.twitter.com/kmgrime)
-- [GitHub](https://www.github.com/kmgrime)
