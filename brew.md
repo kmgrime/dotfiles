@@ -1,6 +1,6 @@
 # brew installs macos/linux
 
-```
+```shell
 fzf
 font-ubuntu
 lsd
@@ -16,11 +16,13 @@ flux
 ```
 
 ## MacOS specific
-```
+
+```shell
 amethyst
 wget
 ```
-```
+
+```shell
 zsh-autocomplete
 zsh-autosuggestions
 zsh-syntax-highlighting
