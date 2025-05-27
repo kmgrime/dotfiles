@@ -1,10 +1,5 @@
--- Add any additional options here
+vim.opt.number = true
+vim.opt.cursorline = true
 
-local opt = vim.opt
-
-opt.ignorecase = true
-
--- Scrolling
-opt.number = true
-opt.relativenumber = false
-opt.scrolloff = 8
+vim.opt.relativenumber = true
+vim.opt.shiftwidth = 4
