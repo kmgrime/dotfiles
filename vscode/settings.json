@@ -1,0 +1,64 @@
+{
+    "workbench.startupEditor": "none",
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    "editor.bracketPairColorization.enabled": true,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "[markdown]": {
+        "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+    },
+    "files.autoSave": "afterDelay",
+    "git.autofetch": true,
+    "terminal.integrated.autoReplies": {
+    
+    },
+    "gitlens.advanced.messages": {
+        "suppressLineUncommittedWarning": true
+    },
+    "python.linting.pylintArgs": ["--disable=C0111,C0103"],
+    "python.languageServer": "Pylance",
+    "security.workspace.trust.untrustedFiles": "open",
+    "editor.fontFamily": "UbuntuMono Nerd Font",
+    "redhat.telemetry.enabled": false,
+    "[yaml]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "[python]": {
+        "editor.formatOnType": true,
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "cSpell.customDictionaries": {
+
+    },
+    "azure.resourceFilter": [
+        "4ffe5c78-bca8-4042-8306-6b480bdd46bd/5122c6a2-e7c1-48ee-9495-564747d3e9d2"
+    ],
+    "telemetry.telemetryLevel": "off",
+    "dotnetAcquisitionExtension.enableTelemetry": false,
+    "editor.renderWhitespace": "none",
+    "terminal.integrated.fontFamily": "UbuntuMono Nerd Font",
+    "editor.inlayHints.fontFamily": "UbuntuMono Nerd Font",
+    "debug.console.fontFamily": "UbuntuMono Nerd Font",
+    "notebook.output.fontFamily": "UbuntuMono Nerd Font",
+    "editor.mouseWheelZoom": true,
+    "editor.rulers": [
+        80
+    ],
+    "editor.snippetSuggestions": "top",
+    "editor.lineHeight": 0,
+    "workbench.colorTheme": "GitHub Dark Default",
+    "editor.minimap.enabled": false,
+    "cmake.showOptionsMovedNotification": false,
+    "terminal.integrated.fontSize": 14,
+    "breadcrumbs.enabled": false,
+    "editor.experimentalInlineEdit.fontFamily": "UbuntuMono Nerd Font",
+    "scm.inputFontFamily": "UbuntuMono Nerd Font",
+    "chat.editor.fontFamily": "UbuntuMono Nerd Font",
+    "editor.fontSize": 14,
+    "workbench.activityBar.location": "hidden",
+    "workbench.tree.renderIndentGuides": "none",
+    "workbench.editor.editorActionsLocation": "hidden",
+    "workbench.tips.enabled": false
+}

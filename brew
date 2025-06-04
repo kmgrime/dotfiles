@@ -1,0 +1,37 @@
+brew installs macos/linux
+=========================
+
+fzf
+ghostty
+git
+htop
+tree
+neofetch
+lazygit
+helm
+flux
+argo
+tree-sitter
+ripgrep
+gcc
+go
+neovim
+kubernetes-cli
+k9s
+tmux
+font-ubuntu-mono-nerd-font
+
+# MacOS specific
+amethyst
+wget
+
+# add to zsh plugins if wanted
+zsh-autocomplete
+zsh-autosuggestions
+zsh-syntax-highlighting
+
+# git clones
+git clone https://github.com/marlonrichert/zsh-autocomplete.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autocomplete
+git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
