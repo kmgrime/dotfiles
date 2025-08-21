@@ -1,9 +1,35 @@
+--[[
+LSP Setup
+--------- 
+This file sets up all language servers using Neovim's integrated LSP client (no Mason or external manager).
+
+How to add a new server:
+1. Create a config file in /lsp/ (e.g., lsp/bicep.lua or lsp/terraform.lua).
+2. Add the server name to the vim.lsp.enable() list below.
+3. The server will use the built-in LSP with default settings.
+
+For custom server configurations, you can use vim.lsp.config() to override settings.
+This setup uses only Neovim's built-in LSP. No lspconfig plugin or Mason installer is used.
+--]]
+
+-- Enable LSP servers using Neovim's integrated LSP
 vim.lsp.enable({
     "gopls",
-    "lua_ls",
-    "yaml"
+    "lua_ls", 
+    "yamlls",  -- Note: using yamlls (standard name) instead of yaml
+    "terraformls",  -- Terraform language server
+    "bicep",        -- Bicep language server
+    -- Add more servers here:
 })
 
+-- Configure LSP server settings using vim.lsp.config
+vim.lsp.config("gopls", require("lsp.gopls"))
+vim.lsp.config("lua_ls", require("lsp.lua_ls"))
+vim.lsp.config("yamlls", require("lsp.yaml"))
+vim.lsp.config("terraformls", require("lsp.terraformls"))
+vim.lsp.config("bicep", require("lsp.bicep"))
+
+-- Configure diagnostics
 vim.diagnostic.config({
     virtual_lines = true,
     -- virtual_text = true,

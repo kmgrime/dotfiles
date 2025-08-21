@@ -1,32 +1,28 @@
-return {
-  'nvim-telescope/telescope.nvim',
-  tag = '0.1.8',
-  dependencies = { 'nvim-lua/plenary.nvim' },
-  config = function()
-    local actions = require("telescope.actions")
+-- FZF fuzzy finder
+-- Provides file finding, live grep, and buffer navigation
 
-    require("telescope").setup {
-      defaults = {
-        mappings = {
-          i = {
-            ["<C-j>"] = actions.move_selection_next,
-            ["<C-k>"] = actions.move_selection_previous,
-            ["<Esc>"] = actions.close,
-          },
-          n = {
-            ["j"] = actions.move_selection_next,
-            ["k"] = actions.move_selection_previous,
-          },
-        },
-      },
+return {
+  'junegunn/fzf',
+  build = './install --bin',
+  dependencies = { 'junegunn/fzf.vim' },
+  config = function()
+    -- FZF layout and appearance
+    vim.g.fzf_layout = { down = '40%' }
+    vim.g.fzf_preview_window = { 'right:60%', 'ctrl-/' }
+    
+    -- Custom FZF actions
+    vim.g.fzf_action = {
+      ['ctrl-t'] = 'tab split',
+      ['ctrl-x'] = 'split',
+      ['ctrl-v'] = 'vsplit'
     }
 
-    local builtin = require('telescope.builtin')
-    vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
-    vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
-    vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
-    vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
-    vim.keymap.set('n', '<C-e>', builtin.find_files, { desc = 'Telescope find files (Ctrl-E' })
+    -- Key mappings
+    vim.keymap.set('n', '<leader>ff', ':Files<CR>', { desc = 'FZF find files' })
+    vim.keymap.set('n', '<leader>fg', ':Rg<CR>', { desc = 'FZF live grep' })
+    vim.keymap.set('n', '<leader>fb', ':Buffers<CR>', { desc = 'FZF buffers' })
+    vim.keymap.set('n', '<leader>fh', ':Helptags<CR>', { desc = 'FZF help tags' })
+    vim.keymap.set('n', '<C-e>', ':Files<CR>', { desc = 'FZF find files (Ctrl-E)' })
   end
 }
 

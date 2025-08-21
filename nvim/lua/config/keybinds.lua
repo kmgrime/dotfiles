@@ -1,3 +1,6 @@
+-- Key mappings and leader key configuration
+-- Sets up window navigation, tab switching, and basic shortcuts
+
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>cd", vim.cmd.Ex)
 vim.keymap.set('n', '<C-h>', '<C-w>h', { desc = 'Move to left window' })
@@ -11,4 +14,3 @@ vim.keymap.set('n', '<leader>3', '3gt', { desc = 'Go to tab 3' })
 vim.keymap.set('n', '<leader>4', '4gt', { desc = 'Go to tab 4' })
 vim.keymap.set('n', '<leader>5', '5gt', { desc = 'Go to tab 5' })
 vim.keymap.set('n', '<leader>q', ':bd<CR>', { desc = 'Close buffer' })
-

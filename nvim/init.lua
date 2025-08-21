@@ -1,3 +1,6 @@
+-- Main Neovim configuration entry point
+-- Loads all configuration modules in the correct order
+
 require('config.options')
 require('config.keybinds')
 require('config.autocmds')
