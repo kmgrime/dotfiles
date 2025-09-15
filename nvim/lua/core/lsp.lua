@@ -17,17 +17,18 @@ vim.lsp.enable({
     "gopls",
     "lua_ls", 
     "yamlls",  -- Note: using yamlls (standard name) instead of yaml
-    "terraformls",  -- Terraform language server
+    "opentofuls",   -- OpenTofu language server
     "bicep",        -- Bicep language server
-    -- Add more servers here:
+    "pyright",
 })
 
 -- Configure LSP server settings using vim.lsp.config
 vim.lsp.config("gopls", require("lsp.gopls"))
 vim.lsp.config("lua_ls", require("lsp.lua_ls"))
 vim.lsp.config("yamlls", require("lsp.yaml"))
-vim.lsp.config("terraformls", require("lsp.terraformls"))
+vim.lsp.config("opentofuls", require("lsp.opentofuls"))
 vim.lsp.config("bicep", require("lsp.bicep"))
+vim.lsp.config("pyright", require("lsp.python"))  -- Using python.lua config file
 
 -- Configure diagnostics
 vim.diagnostic.config({

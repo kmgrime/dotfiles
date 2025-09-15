@@ -2,7 +2,8 @@
 -- Sets up window navigation, tab switching, and basic shortcuts
 
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>cd", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>cd", vim.cmd.Ex, { desc = 'Open Explorer' })
+vim.keymap.set("n", "<leader>cx", ":Rex<CR>", { desc = 'Close Explorer' })
 vim.keymap.set('n', '<C-h>', '<C-w>h', { desc = 'Move to left window' })
 vim.keymap.set('n', '<C-j>', '<C-w>j', { desc = 'Move to below window' })
 vim.keymap.set('n', '<C-k>', '<C-w>k', { desc = 'Move to above window' })
