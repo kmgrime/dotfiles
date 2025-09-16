@@ -1,0 +1,17 @@
+# theme
+theme = dracula
+command = /usr/bin/zsh
+
+# font
+font-family = UbuntuMono Nerd Font
+font-size = "14"
+
+# window
+background-opacity = "0.95"
+window-decoration = false
+window-theme = system
+
+# disable font ligatures
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig
