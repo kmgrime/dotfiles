@@ -1,4 +1,4 @@
-brew installs macos/linux
+package installs macos/linux
 =========================
 
 fzf
