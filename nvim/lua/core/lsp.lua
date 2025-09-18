@@ -15,11 +15,11 @@ This setup uses only Neovim's built-in LSP. No lspconfig plugin or Mason install
 -- Enable LSP servers using Neovim's integrated LSP
 vim.lsp.enable({
     "gopls",
-    "lua_ls", 
-    "yamlls",  -- Note: using yamlls (standard name) instead of yaml
-    "opentofuls",   -- OpenTofu language server
-    "bicep",        -- Bicep language server
-    "pyright",
+    "lua_ls",
+    "yamlls",
+    "opentofuls",
+		"bicep",
+		"pyright",
 })
 
 -- Configure LSP server settings using vim.lsp.config
@@ -28,7 +28,7 @@ vim.lsp.config("lua_ls", require("lsp.lua_ls"))
 vim.lsp.config("yamlls", require("lsp.yaml"))
 vim.lsp.config("opentofuls", require("lsp.opentofuls"))
 vim.lsp.config("bicep", require("lsp.bicep"))
-vim.lsp.config("pyright", require("lsp.python"))  -- Using python.lua config file
+vim.lsp.config("pyright", require("lsp.python"))
 
 -- Configure diagnostics
 vim.diagnostic.config({

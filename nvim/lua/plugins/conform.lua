@@ -12,9 +12,9 @@ return {
         yaml = { "yamlfmt" },
         bicep = { "bicep" },
         python = { "black" },
-        terraform = { "tofu" },  -- Use OpenTofu formatter for .tf files
-        hcl = { "tofu" },       -- Also format HCL files with OpenTofu
-      },
+        terraform = { "tofu" },
+        hcl = { "tofu" },
+			},
       -- format_on_save = {
       --   lsp_fallback = true,
       --   async = false,

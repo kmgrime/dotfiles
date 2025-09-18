@@ -1,3 +1,6 @@
+-- Configuration for which-key.nvim plugin
+-- which-key.nvim provides a popup with keybinding hints
+
 return
 {
   "folke/which-key.nvim",
