@@ -3,6 +3,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
 
+set -o vi
+
 zstyle ':omz:update' mode auto      # update automatically without asking
 zstyle ':omz:update' frequency 1
 
@@ -58,7 +60,7 @@ fzf_cd() {
  local dir
  dir=$(eval "$FZF_DEFAULT_CTRL_E_COMMAND" | fzf) || return 1
  cd "$dir" || return 1
- zle reset-prompt  # Redraw prompt after changing directory
+zle reset-prompt  # Redraw prompt after changing directory
 }
 zle -N fzf_cd_widget fzf_cd
 bindkey '^E' fzf_cd_widget
@@ -85,7 +87,7 @@ alias v="nvim"
 alias lg="lazygit"
 alias update="brew update && brew upgrade"
 alias k="kubectl"
-#alias docker="podman"
+alias docker="podman"
 
 ## Default app browser
 export BROWSER="open"
