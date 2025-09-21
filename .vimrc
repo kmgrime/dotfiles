@@ -19,12 +19,15 @@ set encoding=utf-8
 set fileencoding=utf-8
 set mouse=a
 set clipboard=unnamedplus
+set hlsearch
+set incsearch
 set laststatus=2
 set statusline=%f\ %y\ %m\ %r\ %=Ln\ %l,%c\ [%p%%]
 set termguicolors
 syntax on
 colorscheme dracula
 hi Normal guibg=NONE ctermbg=NONE
+let g:netrw_banner = 0
 
 " mappings
 let mapleader=' '
