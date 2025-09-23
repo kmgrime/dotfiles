@@ -11,4 +11,5 @@ vim.opt.softtabstop = 2
 vim.opt.signcolumn = "yes"
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
+vim.opt.colorcolumn = "80"
 vim.g.netrw_banner = 0
