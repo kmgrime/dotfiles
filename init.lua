@@ -5,7 +5,7 @@ vim.g.mapleader = " "
 vim.opt.number = true         -- Show line numbers
 vim.opt.relativenumber = true -- Show relative line numbers
 vim.opt.cursorline = true     -- Highlight current line
-vim.opt.colorcolumn = "80"    -- Show column guide
+vim.opt.colorcolumn = "120"    -- Show column guide
 vim.opt.signcolumn = "yes"    -- Always show sign column
 vim.opt.showmatch = true      -- Show matching brackets
 vim.opt.wrap = false          -- Don't wrap lines
@@ -67,38 +67,24 @@ vim.keymap.set('n', '<leader>fh', ':Helptags<CR>', { desc = 'FZF help tags' })
 -- LSP Configuration
 local function setup_lsp()
     require("mason").setup({
-        ensure_installed = { "black", "shfmt", "clang-format", "stylua" }
-    })
-
-    require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "clangd", "pyright", "bashls" }
+        ensure_installed = { "ruff", "shfmt", "clang-format", "stylua", "goimports" }
     })
 
     local on_attach = function(_, bufnr)
         vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { buffer = bufnr })
         vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = bufnr })
-        vim.keymap.set('n', '<leader>cf', vim.lsp.buf.format, { buffer = bufnr })
     end
 
-    -- Setup null-ls for formatting
-    local null_ls = require("null-ls")
-    null_ls.setup({
-        sources = {
-            null_ls.builtins.formatting.black,      -- Python
-            null_ls.builtins.formatting.shfmt,      -- Bash
-            null_ls.builtins.formatting.clang_format, -- C
-            null_ls.builtins.formatting.stylua,     -- Lua
+    require("mason-lspconfig").setup({
+        ensure_installed = { "lua_ls", "clangd", "pyright", "bashls", "gopls" },
+        handlers = {
+            function(server_name)
+                require("lspconfig")[server_name].setup({
+                    on_attach = on_attach
+                })
+            end
         }
     })
-
-    -- Automatically setup installed servers
-    require("mason-lspconfig").handlers = {
-        function(server_name)
-            require("lspconfig")[server_name].setup({
-                on_attach = on_attach
-            })
-        end
-    }
 end
 
 --plugins
@@ -110,40 +96,41 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    "rose-pine/neovim",
+  --"rose-pine/neovim",
     "neovim/nvim-lspconfig",
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     "junegunn/fzf",
     "junegunn/fzf.vim",
     "nvim-treesitter/nvim-treesitter",
-    "jose-elias-alvarez/null-ls.nvim",
-    "nvim-lua/plenary.nvim"  -- required by null-ls
+    "stevearc/conform.nvim",
 })
 
 -- Setup formatters
-require("mason").setup({
-    ensure_installed = { "black" }
+require("conform").setup({
+    formatters_by_ft = {
+        c = { "clang_format" },
+        python = { "ruff_format" },
+        go = { "goimports" },
+        lua = { "stylua" },
+        sh = { "shfmt" },
+        bash = { "shfmt" },
+    },
 })
-
-local null_ls = require("null-ls")
-null_ls.setup({
-    sources = {
-        null_ls.builtins.formatting.black
-    }
-})
+vim.keymap.set('n', '<leader>cf', function()
+    require("conform").format({ async = true, lsp_fallback = true })
+end, { desc = "Format buffer" })
 
 -- Setup Treesitter
-require('nvim-treesitter.configs').setup({
-    ensure_installed = { "lua", "bash", "c", "python" },
-    highlight = { enable = true },
-    indent = { enable = true }
+require('nvim-treesitter').setup({
+    ensure_installed = { "c", "python", "go", "lua", "bash" },
 })
+vim.treesitter.language.register("bash", "sh")
 -- Setup LSP after plugins are loaded
 setup_lsp()
 
 --plugins options
-vim.cmd("colorscheme rose-pine")
+--vim.cmd("colorscheme rose-pine")
 
 -- transparent background
 local function enable_transparency()
