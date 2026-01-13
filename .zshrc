@@ -85,7 +85,6 @@ alias l="ls -lah --color -h --group-directories-first"
 alias wttr="curl wttr.in"
 alias v="nvim"
 alias lg="lazygit"
-alias update="brew update && brew upgrade"
 alias k="kubectl"
 alias docker="podman"
 
@@ -97,9 +96,6 @@ export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/usr/sbin
 export PATH=$PATH:/usr/bin
 export PATH=$PATH:$HOME/.local/bin
-
-## Brew path - ONLY FOR LINUX
-#eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # Argo Workflows CLI autocompletion
 if command -v argo &>/dev/null; then
