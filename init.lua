@@ -1,7 +1,7 @@
 -- leader mapping
 vim.g.mapleader = " "
 
--- Editor Display
+-- Editor Display 
 vim.opt.number = true         -- Show line numbers
 vim.opt.relativenumber = true -- Show relative line numbers
 vim.opt.cursorline = true     -- Highlight current line
@@ -48,6 +48,10 @@ vim.keymap.set('n', '<leader>4', '4gt', { desc = 'Go to tab 4' })
 vim.keymap.set('n', '<leader>5', '5gt', { desc = 'Go to tab 5' })
 vim.keymap.set('n', '<leader>q', ':bd<CR>', { desc = 'Close buffer' })
 
+-- Move lines
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
 -- File management
 vim.keymap.set("n", "<leader>cd", vim.cmd.Ex, { desc = 'Open Explorer' })
 vim.keymap.set("n", "<leader>cx", ":Rex<CR>", { desc = 'Close Explorer' })
@@ -58,8 +62,8 @@ vim.keymap.set('v', 'y', '"+y', { desc = "Yank selection to system clipboard" })
 
 -- Search and Find
 vim.keymap.set('n', '<leader>ff',
-    "<cmd>let $FZF_DEFAULT_COMMAND='find . -type f -not -path \"*/.git/*\" -not -path \"*/.venv/*\"'<CR>:Files<CR>",
-    { desc = 'FZF find files' })
+"<cmd>let $FZF_DEFAULT_COMMAND='find . -type f -not -path \"*/.git/*\" -not -path \"*/.venv/*\"'<CR>:Files<CR>",
+{ desc = 'FZF find files' })
 vim.keymap.set('n', '<leader>fg', ':Rg<CR>', { desc = 'FZF live grep' })
 vim.keymap.set('n', '<leader>fb', ':Buffers<CR>', { desc = 'FZF buffers' })
 vim.keymap.set('n', '<leader>fh', ':Helptags<CR>', { desc = 'FZF help tags' })
@@ -104,6 +108,8 @@ require("lazy").setup({
     "junegunn/fzf.vim",
     "nvim-treesitter/nvim-treesitter",
     "stevearc/conform.nvim",
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' }
 })
 
 -- Setup formatters
@@ -131,6 +137,7 @@ setup_lsp()
 
 --plugins options
 --vim.cmd("colorscheme rose-pine")
+require('lualine').setup()
 
 -- transparent background
 local function enable_transparency()
