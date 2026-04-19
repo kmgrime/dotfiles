@@ -1,8 +1,2 @@
--- Main Neovim configuration entry point
--- Loads all configuration modules in the correct order
-
-require('config.options')
-require('config.keybinds')
-require('config.autocmds')
-require('core.lazy')
-require('core.lsp')
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")

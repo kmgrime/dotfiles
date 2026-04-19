@@ -1,15 +1,6 @@
--- Neovim options and settings
--- Configure editor behavior, appearance, and indentation
+-- Options are automatically loaded before lazy.nvim startup
+-- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
+-- Add any additional options here
 
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.scrolloff = 8
-vim.opt.cursorline = true
-vim.opt.shiftwidth = 2
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
-vim.opt.signcolumn = "yes"
-vim.opt.hlsearch = true
-vim.opt.incsearch = true
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "120"
 vim.g.netrw_banner = 0
