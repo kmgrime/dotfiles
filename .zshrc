@@ -1,107 +1,71 @@
-export ZSH="$HOME/.oh-my-zsh"
+# shell
+PROMPT='%F{#9ccfd8}%~%f${vcs_info_msg_0_} %F{#eb6f92}$%f '
 
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+fpath=(/usr/share/zsh/site-functions /usr/share/zsh/*/functions $fpath)
+autoload -Uz compinit vcs_info
+compinit
 
-set -o vi
-
-zstyle ':omz:update' mode auto      # update automatically without asking
-zstyle ':omz:update' frequency 1
-
-DISABLE_AUTO_TITLE="true"
-
-COMPLETION_WAITING_DOTS="true"
-
-DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-HIST_STAMPS="dd-mm-yyyy"
-
-plugins=(
-  git
-  kubectl
-	helm
-	zsh-autocomplete
-	zsh-autosuggestions
-	zsh-syntax-highlighting
-)
-
-source $ZSH/oh-my-zsh.sh
-
-# Enable fuzzy directory and file search.
-source <(fzf --zsh);
-
-export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='nvim'
-else
-  export EDITOR='vim'
+# autocomplete
+if command -v kubectl &>/dev/null; then
+  source <(kubectl completion zsh)
 fi
-
-# History file settings
-HISTFILE=$HOME/.zsh_history
-HISTFILESIZE=1000000
-HISTSIZE=1000000
-SAVEHIST=500000
-setopt APPEND_HISTORY
-setopt EXTENDED_HISTORY
-setopt INC_APPEND_HISTORY
-setopt SHARE_HISTORY
-
-# Enable fuzzy directory and file search
-source <(fzf --zsh);
-# Ignore certain directories globally.
-export FZF_IGNORE="\( -name .git -o -name .gitlab -prune \)"
-export FZF_DEFAULT_COMMAND="find . $FZF_IGNORE -o -not -path '*/.*' -print"
-export FZF_DEFAULT_CTRL_E_COMMAND="find . $FZF_IGNORE -o -type d -not -path '*/.*' -print"
-# Use Ctrl-E for fuzzy cd.
-fzf_cd() {
- local dir
- dir=$(eval "$FZF_DEFAULT_CTRL_E_COMMAND" | fzf) || return 1
- cd "$dir" || return 1
-zle reset-prompt  # Redraw prompt after changing directory
-}
-zle -N fzf_cd_widget fzf_cd
-bindkey '^E' fzf_cd_widget
-
-# Drop into vi with the current commandline
-bindkey "^X^E" edit-command-line
-autoload -U edit-command-line
-zle -N edit-command-line
-bindkey -M vicmd v edit-command-line
-
-# Enable autocomplete that is case insensitive
-zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
-autoload -Uz compinit && compinit
-
-# Defaults
-export VISUAL="/usr/bin/nvim"
-export EDITOR="$VISUAL"
-export DOCKER_COMMAND=podman
-
-# Aliases
-alias l="ls -lah --color -h --group-directories-first"
-alias wttr="curl wttr.in"
-alias v="nvim"
-alias lg="lazygit"
-alias update="brew update && brew upgrade"
-alias k="kubectl"
-alias docker="podman"
-
-## Default app browser
-export BROWSER="open"
-
-## Path exports
-export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:/usr/sbin
-export PATH=$PATH:/usr/bin
-export PATH=$PATH:$HOME/.local/bin
-
-## Brew path - ONLY FOR LINUX
-#eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
-# Argo Workflows CLI autocompletion
+if command -v helm &>/dev/null; then
+  source <(helm completion zsh)
+fi
 if command -v argo &>/dev/null; then
   source <(argo completion zsh)
 fi
+
+# git
+precmd() { vcs_info }
+zstyle ':vcs_info:git:*' formats ' %F{#f6c177}(%b)%f'
+setopt PROMPT_SUBST
+
+# general
+source <(fzf --zsh)
+
+export LANG=en_US.UTF-8
+export VISUAL="nvim"
+export DOCKER_COMMAND=podman
+
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR="$VISUAL"
+fi
+HISTFILE=$HOME/.zsh_history
+HISTFILESIZE=100000
+HISTSIZE=100000
+SAVEHIST=500000
+setopt EXTENDED_HISTORY
+setopt SHARE_HISTORY
+FZF_IGNORE="\( -name .git -o -name .gitlab -prune \)"
+export FZF_DEFAULT_COMMAND="find . $FZF_IGNORE -o -not -path '*/.*' -print"
+export FZF_DEFAULT_CTRL_E_COMMAND="find . $FZF_IGNORE -o -type d -not -path '*/.*' -print"
+fzf_cd() {
+  local dir
+  dir=$(eval "$FZF_DEFAULT_CTRL_E_COMMAND" | fzf) || return 1
+  cd "$dir" || return 1
+  zle reset-prompt
+}
+zle -N fzf_cd_widget fzf_cd
+bindkey '^E' fzf_cd_widget
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey "^X^E" edit-command-line
+bindkey -M vicmd v edit-command-line
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
+
+# aliases
+alias l="ls -lah --color -h --group-directories-first"
+alias v="nvim"
+alias lg="lazygit"
+alias update="$HOME/scripts/update.sh"
+alias k="kubectl"
+alias docker="podman"
+
+# exports
+export BROWSER="open"
+export PATH=$HOME/.local/bin:$PATH
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$HOME/.opencode/bin:$PATH
