@@ -1,29 +1,29 @@
--- Rose Pine colorscheme with transparency and lualine statusline
--- Sets up theme and status bar appearance
-
-local function enable_transparency()
-    vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-end
-
+-- Rose Pine with transparent background
 return {
-    {
-        "rose-pine/neovim",
-        config = function()
-            vim.cmd.colorscheme("rose-pine")
-            enable_transparency()
-        end,
+  {
+    "rose-pine/neovim",
+    name = "rose-pine",
+    opts = {
+      styles = {
+        transparency = true,
+      },
+      highlight_groups = {
+        Visual = { bg = "#524f67", inherit = false },
+      },
     },
-    {
-        "nvim-lualine/lualine.nvim",
-        dependencies = {
-            "nvim-tree/nvim-web-devicons",
-        },
-        opts = {
-            theme = "rose-pine",
-            disabled_filetypes = {
-                statusline = { "neo-tree" },
-                winbar = { "neo-tree" },
-            },
-        },
+  },
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "rose-pine",
     },
+  },
+  {
+    "nvim-lualine/lualine.nvim",
+    opts = {
+      options = {
+        theme = "rose-pine",
+      },
+    },
+  },
 }
