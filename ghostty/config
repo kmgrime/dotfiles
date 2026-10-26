@@ -1,14 +1,14 @@
 # theme
-theme = dracula
-command = /usr/bin/zsh
+theme = Rose Pine
+command = /bin/zsh
 
 # font
 font-family = UbuntuMono Nerd Font
 font-size = "14"
 
 # window
-background-opacity = "0.95"
-window-decoration = false
+background-opacity = "0.93"
+background-blur = true
 window-theme = system
 
 # disable font ligatures

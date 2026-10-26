@@ -1,4 +1,3 @@
--- Rose Pine with transparent background
 return {
   {
     "rose-pine/neovim",

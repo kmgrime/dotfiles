@@ -6,7 +6,7 @@ return {
       inlay_hints = { enabled = false },
       ---@type lspconfig.options
       servers = {
-        pyright = false, -- Disable Pyright
+        pyright = false,
         ty = {},
         gopls = {},
         bicep = {
@@ -19,7 +19,6 @@ return {
           end,
         },
         ruff = {},
-        qmlls = {},
       },
     },
   },
