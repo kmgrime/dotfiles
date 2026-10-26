@@ -39,6 +39,11 @@ return {
             },
           },
         },
+        keymap = {
+          editor = {
+            ['<leader>aa'] = { 'toggle', desc = 'Toggle Opencode window' },
+          },
+        },
       })
 
       local api = require("opencode.api")
